@@ -65,7 +65,12 @@ plus.addEventListener('click', () => conditionalCalculate('+'));
 minus.addEventListener('click', () => conditionalCalculate('-'));
 multiply.addEventListener('click', () => conditionalCalculate('x'));
 divide.addEventListener('click', () => conditionalCalculate('÷'));
-dot.addEventListener('click', () => printToScreen('.'));
+dot.addEventListener('click', () => {
+    if(!screen.textContent.includes('.')){
+        printToScreen('.');
+    }
+
+});
 equals.addEventListener('click', calculateFromScreen);
 
 //number event listeners
