@@ -43,8 +43,9 @@ function printToScreen(content) {
 //big button event listeners
 
 back.addEventListener('click', () => {
-    if (screen.textContent == 'Can\'t divide by zero') {
+    if (screen.textContent.includes('Can\'t divide by zero')) {
         screen.textContent = '0';
+        return;
     }
     const text = screen.textContent;
     screen.textContent = text.slice(0, -1);
@@ -142,7 +143,7 @@ function slash(a, b) {
 function calculateFromScreen() {
     myString = (document.querySelector('.screen')).textContent;
     const myArr = Array.from(myString);
-    screen.textContent = calculate(myArr);
+    screen.textContent = calculate(myArr).toFixed(2);
 }
 
 
